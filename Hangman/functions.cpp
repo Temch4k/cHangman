@@ -2,6 +2,13 @@
 #include <string>
 #include "functions.h"
 #include <cstdlib>
+#include <vector>
+#include <fstream>
+
+
+#include <iostream>
+#include <curl/curl.h>
+
 
 using namespace std;
 
@@ -36,19 +43,76 @@ int intro()
     }
 }
 
+size_t writeFunction(void *ptr, size_t size, size_t nmemb, std::string* data) {
+    data->append((char*) ptr, size * nmemb);
+    return size * nmemb;
+}
+
+/*string cppApi()
+{
+    string response="";
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    auto curl = curl_easy_init();
+    if (curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+        curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
+        curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 50L);
+        curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
+
+        std::string response_string;
+        std::string header_string;
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeFunction);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
+        curl_easy_setopt(curl, CURLOPT_HEADERDATA, &header_string);
+
+        curl_easy_perform(curl);
+        cout << response_string;
+        curl_easy_cleanup(curl);
+        curl_global_cleanup();
+        curl = NULL;
+    }
+    return response;
+}
+*/
+
+// return a list of words having at least min_chars characters each
+// https://cal-linux.com/tutorials/vectors.html
+std::vector<std::string> make_word_list( std::string path_to_word_file, std::size_t min_chars )
+{
+    std::vector<std::string> word_list ;
+
+    std::ifstream file(path_to_word_file) ;
+    std::string word ;
+    while( file >> word ) if( word.size() >= min_chars ) word_list.push_back(word) ;
+
+    return word_list ;
+}
+
+// return a word randomly chosen from ones in word_list
+std::string random_word( const std::vector<std::string>& word_list )
+{
+    // consider using the C++ random number library instead
+    // http://en.cppreference.com/w/cpp/numeric/random
+    return word_list.empty() ? "" : word_list[ std::rand() % word_list.size() ] ;
+}
+
 int startGame()
 {
     string array[21] = {"kiwi","canoe","doberman", "frame", "frugal", "orange", "frigate",
                                    "beauceron", "postal","basket","cabinet","birch","machine","mississippian",
                                    "destroyer","mutt","fruit","behemoth","valerian","joseph","brotherhood"};
 
-
-
     int v1 = rand()%array->size();
     int size_of_RanString;
 
-    cout << array[v1];
-    string gameString = array[v1];
+//    string baba = cppApi();
+
+    string yay = random_word(make_word_list("C:/Users/angry/CLionProjects/Hangman/cmake-build-debug/words.txt.txt",3));
+
+    cout<<yay;
+//    cout << array[v1];
+//    string gameString = array[v1];
+    string gameString = yay;
     size_of_RanString = gameString.length();
 
 
@@ -117,7 +181,6 @@ int startGame()
             }
         }
     }
-
 }
 
 void printUserString(string yes)

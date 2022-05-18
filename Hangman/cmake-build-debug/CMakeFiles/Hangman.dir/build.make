@@ -57,6 +57,7 @@ include CMakeFiles/Hangman.dir/progress.make
 include CMakeFiles/Hangman.dir/flags.make
 
 CMakeFiles/Hangman.dir/main.cpp.obj: CMakeFiles/Hangman.dir/flags.make
+CMakeFiles/Hangman.dir/main.cpp.obj: CMakeFiles/Hangman.dir/includes_CXX.rsp
 CMakeFiles/Hangman.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\angry\CLionProjects\Hangman\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Hangman.dir/main.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hangman.dir\main.cpp.obj -c C:\Users\angry\CLionProjects\Hangman\main.cpp
@@ -70,6 +71,7 @@ CMakeFiles/Hangman.dir/main.cpp.s: cmake_force
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angry\CLionProjects\Hangman\main.cpp -o CMakeFiles\Hangman.dir\main.cpp.s
 
 CMakeFiles/Hangman.dir/functions.cpp.obj: CMakeFiles/Hangman.dir/flags.make
+CMakeFiles/Hangman.dir/functions.cpp.obj: CMakeFiles/Hangman.dir/includes_CXX.rsp
 CMakeFiles/Hangman.dir/functions.cpp.obj: ../functions.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\angry\CLionProjects\Hangman\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Hangman.dir/functions.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hangman.dir\functions.cpp.obj -c C:\Users\angry\CLionProjects\Hangman\functions.cpp
@@ -93,6 +95,7 @@ Hangman_EXTERNAL_OBJECTS =
 Hangman.exe: CMakeFiles/Hangman.dir/main.cpp.obj
 Hangman.exe: CMakeFiles/Hangman.dir/functions.cpp.obj
 Hangman.exe: CMakeFiles/Hangman.dir/build.make
+Hangman.exe: ../curl-7.83.1_1-win64-mingw/curl-7.83.1-win64-mingw/lib/libcurl.dll.a
 Hangman.exe: CMakeFiles/Hangman.dir/linklibs.rsp
 Hangman.exe: CMakeFiles/Hangman.dir/objects1.rsp
 Hangman.exe: CMakeFiles/Hangman.dir/link.txt

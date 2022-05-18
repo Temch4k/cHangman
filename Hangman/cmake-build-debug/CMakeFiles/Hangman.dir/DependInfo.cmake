@@ -11,6 +11,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../curl-7.83.1_1-win64-mingw/curl-7.83.1-win64-mingw/include"
   )
 
 # Targets to which this target links.
